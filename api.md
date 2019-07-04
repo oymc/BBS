@@ -275,11 +275,13 @@
 	String token;
 	RedirectAttributes redirectAttrs;
 }
+~~~
 + 响应体
 ~~~
 {
 	return step2;
 }
+~~~
 `/updatePhoneBinding/step2`
 + 功能说明：修改手机绑定 第二步验证新手机界面
 + 请求方法：GET
@@ -304,11 +306,13 @@
 	String token;
 	RedirectAttributes redirectAttrs;
 }
+~~~
 + 响应体
 ~~~
 {
 	return /jump;
 }
+~~~
 `/userLoginLogList`
 + 功能说明：用户登录日志列表
 + 请求方法：GET
@@ -325,6 +329,7 @@
 }
 ~~~
 `/privateMessageList`
+------------------------
 + 功能说明：私信列表
 + 请求方法：GET
 + 请求体
@@ -340,7 +345,7 @@
 }
 ~~~
 `/privateMessageChatList`
-+ 功能说明：私信列表
++ 功能说明：私信对话列表
 + 请求方法：GET
 + 请求体
 ~~~
@@ -355,3 +360,194 @@
 			//查询结果集
 }
 ~~~
+`/addPrivateMessage`
++ 功能说明：私信添加
++ 请求方法：POST
++ 请求体
+~~~
+{
+	ModelMap model;
+	String friendUserName;
+	String messageContent;//消息内容
+	String token;
+	String captchaKey;
+	String captchaValue;
+	String jumpUrl;//跳转地址
+	RedirectAttributes redirectAttrs,
+}
+~~~
++ 响应体无
++ 响应：页面跳转
+`/deletePrivateMessage`
++ 功能说明：私信删除
++ 请求方法：POST
++ 请求体
+~~~
+{
+	ModelMap model;
+	String friendUserName;
+	String token;
+	String jumpUrl;//跳转地址
+	RedirectAttributes redirectAttrs；
+}
+~~~
+------------------
+`/systemNotifyList`
++ 功能说明：系统通知列表
++ 请求方法：GET
++ 请求体
+~~~
+{
+	ModelMap model;
+        PageForm pageForm;
+}
+~~~
++ 响应体
+~~~
+//将查询结果集传给分页List
+~~~
+`/deleteSystemNotify`
++ 功能说明： 删除系统通知
++ 请求方法：POST
++ 请求体
+~~~
+{
+	ModelMap model;
+        String jumpUrl；
+	String token；
+	String subscriptionSystemNotifyId；
+	RedirectAttributes redirectAttrs；
+}
+~~~
+-------------------
++ 响应:删除成功
+`/unreadMessageCount`
++ 功能说明： 未读消息数量
++ 请求方法：POST
++ 请求体
+~~~
+{
+	ModelMap model;
+}
+~~~
++ 响应体
+~~~
+{
+	unreadMessage
+}
+~~~
+`/remindList`
++ 功能说明： 提醒列表
++ 请求方法：GET
++ 请求体
+~~~
+{
+	ModelMap model;
+	PageForm pageForm;
+}
+~~~
++ 响应体
+~~~
+{
+	//将查询结果集传给分页List
+}
+`/remindList`
++ 功能说明： 提醒列表
++ 请求方法：GET
++ 请求体
+~~~
+{
+	ModelMap model;
+	PageForm pageForm;
+}
+~~~
++ 响应体
+~~~
+{
+	//将查询结果集传给分页List
+}
+~~~
+`/deleteRemind`
++ 功能说明： 删除提醒
++ 请求方法：POST
++ 请求体
+~~~
+{
+	ModelMap model;
+	String jumpUrl;
+	String token;
+	String remindId;
+	RedirectAttributes redirectAttrs;
+}
+~~~
++ 响应体
+~~~
+{
+	success boolean;//
+}
+------------
+`/topicFavoriteList`
++ 功能说明： 话题收藏列表
++ 请求方法： GET
++ 请求体
+~~~
+{
+	ModelMap model;
+	PageForm pageForm;
+	Long topicId;
+}
+~~~
++ 响应体
+~~~
+{
+	//将查询结果集传给分页List
+}
+`/favoriteList`
++ 功能说明： 收藏夹列表
++ 请求方法： GET
++ 请求体
+~~~
+{
+	ModelMap model;
+	PageForm pageForm;     
+}
+~~~
++ 响应体
+~~~
+{
+	//将查询结果集传给分页List
+}
+`/deleteFavorite`
++ 功能说明： 删除收藏
++ 请求方法： POST
++ 请求体
+~~~
+{
+	ModelMap model;
+	String jumpUrl;
+	String token;
+	String favoriteId;
+	RedirectAttributes redirectAttrs;    
+}
+~~~
++ 响应体
+~~~
+{
+	success boolean;//
+}
+`/topicUnhideList`
++ 功能说明： 话题取消隐藏用户列表
++ 请求方法： GET
++ 请求体
+~~~
+{
+	ModelMap model;
+	PageForm pageForm;
+	Long topicId;
+}
+~~~
++ 响应体
+~~~
+{
+	//将查询结果集传给分页List
+}
