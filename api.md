@@ -455,7 +455,7 @@
 + 功能说明： 提醒列表
 + 请求方法：GET
 + 请求体
-~~~
+~~~java
 {
 	ModelMap model;
 	PageForm pageForm;
@@ -485,6 +485,7 @@
 {
 	success boolean;//
 }
+~~~
 ------------
 `/topicFavoriteList`
 + 功能说明： 话题收藏列表
@@ -502,6 +503,7 @@
 {
 	//将查询结果集传给分页List
 }
+~~~
 `/favoriteList`
 + 功能说明： 收藏夹列表
 + 请求方法： GET
@@ -517,6 +519,7 @@
 {
 	//将查询结果集传给分页List
 }
+~~~
 `/deleteFavorite`
 + 功能说明： 删除收藏
 + 请求方法： POST
@@ -535,6 +538,7 @@
 {
 	success boolean;//
 }
+~~~
 `/topicUnhideList`
 + 功能说明： 话题取消隐藏用户列表
 + 请求方法： GET
